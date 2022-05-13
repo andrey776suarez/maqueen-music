@@ -4,7 +4,9 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "BitBot": "github:4tronix/BitBot#1.5.2",
+        "neopixel": "github:Microsoft/pxt-neopixel#v0.7.3"
     },
     "files": [
         "main.blocks",
