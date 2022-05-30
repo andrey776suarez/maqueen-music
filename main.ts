@@ -1,20 +1,30 @@
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 10; index++) {
-        strip = neopixel.create(DigitalPin.P6, 24, NeoPixelMode.RGB)
-        music.playTone(494, music.beat(BeatFraction.Whole))
+        strip = neopixel.create(DigitalPin.P15, 4, NeoPixelMode.RGB)
+        music.playTone(494, music.beat(BeatFraction.Half))
+        maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
+        maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
-        music.playTone(440, music.beat(BeatFraction.Whole))
+        music.playTone(440, music.beat(BeatFraction.Half))
         strip.showColor(neopixel.colors(NeoPixelColors.Blue))
     }
+    basic.pause(1000)
+    maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
+    maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
 })
 input.onButtonPressed(Button.B, function () {
     for (let index = 0; index < 10; index++) {
-        strip = neopixel.create(DigitalPin.P15, 24, NeoPixelMode.RGB)
+        strip = neopixel.create(DigitalPin.P15, 4, NeoPixelMode.RGB)
         music.playTone(988, music.beat(BeatFraction.Half))
+        maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
+        maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
         music.playTone(698, music.beat(BeatFraction.Half))
-        strip.showColor(neopixel.colors(NeoPixelColors.Green))
+        strip.showColor(neopixel.colors(NeoPixelColors.Yellow))
     }
+    basic.pause(1000)
+    maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOff)
+    maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
 })
 let strip: neopixel.Strip = null
 basic.showString("Rayo Maqueen cachau")
@@ -25,7 +35,9 @@ basic.showLeds(`
     . # # # .
     . # # # .
     `)
-strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB)
+strip = neopixel.create(DigitalPin.P14, 4, NeoPixelMode.RGB)
+maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOn)
+maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOn)
 music.playTone(330, music.beat(BeatFraction.Whole))
 strip.showColor(neopixel.colors(NeoPixelColors.Blue))
 music.playTone(330, music.beat(BeatFraction.Whole))
@@ -104,6 +116,9 @@ music.playTone(294, music.beat(BeatFraction.Whole))
 strip.showColor(neopixel.colors(NeoPixelColors.Green))
 music.playTone(494, music.beat(BeatFraction.Whole))
 strip.showColor(neopixel.colors(NeoPixelColors.Green))
+basic.pause(1000)
+maqueen.writeLED(maqueen.LED.LEDLeft, maqueen.LEDswitch.turnOff)
+maqueen.writeLED(maqueen.LED.LEDRight, maqueen.LEDswitch.turnOff)
 basic.forever(function () {
 	
 })
